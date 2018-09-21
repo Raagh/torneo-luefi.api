@@ -17,8 +17,13 @@
     },
     "homepage": "https://github.com/Raagh/torneo-luefi#readme",
     "dependencies": {
+        "cors": "^2.8.4",
         "express": "^4.16.3",
-        "mysql": "^2.16.0"
+        "mysql": "^2.16.0",
+        "mysql2": "^1.6.1",
+        "sequelize": "^4.38.1",
+        "sequelize-cli": "^4.1.1",
+        "serve-favicon": "^2.5.0"
     },
     "devDependencies": {
         "nodemon": "^1.18.4"
