@@ -1,6 +1,6 @@
 {
     "name": "torneo-luefi.api",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "APIRest for Torneo LUEFI",
     "main": "index.js",
     "scripts": {
@@ -8,14 +8,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Raagh/torneo-luefi.git"
+        "url": "https://github.com/Raagh/torneo-luefi.web.git"
     },
     "author": "Ovelar Nicolas - Patricio Ferraggi",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/Raagh/torneo-luefi/issues"
+        "url": "https://github.com/Raagh/torneo-luefi.web/issues"
     },
-    "homepage": "https://github.com/Raagh/torneo-luefi#readme",
+    "homepage": "https://github.com/Raagh/torneo-luefi.web#readme",
     "dependencies": {
         "cors": "^2.8.4",
         "express": "^4.16.3",
