@@ -1,7 +1,7 @@
 {
-    "Database": "torneolu_efi",
-    "Host": "localhost",
-    "User": "root",
-    "Password": "password",
-    "MultipleStatements": true
+    "database": "torneolu_efi",
+    "host": "localhost",
+    "user": "root",
+    "password": "password",
+    "multipleStatements": true
 }

@@ -1,29 +1,13 @@
 const express = require('express');
-const cors = require('cors');
-const favicon = require('serve-favicon');
-const path = require('path');
-const app = express();
-const routesConfig = require('./config/routes.config');
 const apiConfig = require('./config/api.config');
+const addRoutes = require('./middlewares/routes.middleware');
+const addBase = require('./middlewares/base.middleware');
+const app = express();
 
-// Middlewares
-app.use(express.json());
-
-// Routes
-app.use(routesConfig.Base + routesConfig.Teams, require('./routes/teams'));
-
-// Cors
-app.use(cors());
-
-// Body Parser
-app.use(express.urlencoded({
-    extended: true
-}));
-
-// Favicon
-app.use(favicon(path.join(__dirname, '../public', 'favicon.ico')));
+addBase(app);
+addRoutes(app);
 
 // Starting the server
-app.listen(apiConfig.Port, apiConfig.Url, () => {
-    console.log(`api running on ${apiConfig.Url}:${apiConfig.Port}`);
+app.listen(apiConfig.port, apiConfig.url, () => {
+  console.log(`api running on ${apiConfig.url}:${apiConfig.port}`);
 });

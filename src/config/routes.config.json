@@ -1,4 +1,4 @@
 {
-    "Base": "/api/v1",
-    "Teams": "/teams"
+    "base": "/api/v1",
+    "teams": "/teams"
 }

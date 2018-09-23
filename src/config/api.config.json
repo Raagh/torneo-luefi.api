@@ -1,4 +1,4 @@
 {
-    "Url": "localhost",
-    "Port": "4200"
+    "url": "localhost",
+    "port": "4200"
 }

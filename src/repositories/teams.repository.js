@@ -1,15 +1,14 @@
-const database = require('../database');
+const database = require('../infrastructure/database');
 
-class TeamsRepository {
-    async getTeams() {
-        return await database.getTeams();
-    }
-    async getTeam(id) {
-        return await database.getTeam(id);
-    }
-    async deleteTeam(id) {
-        return await database.deleteTeam(id);
-    }
-}
+const getTeams = async () => await database.getTeams();
 
-module.exports = new TeamsRepository();
+const getTeam = async id => await database.getTeam(id);
+
+const deleteTeam = async id => await database.deleteTeam(id);
+
+
+module.exports = {
+  getTeams,
+  getTeam,
+  deleteTeam
+};
