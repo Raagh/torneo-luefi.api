@@ -21,8 +21,7 @@ router.delete('/:id', async (req, res) => {
   const id = req.params.id;
   const result = await teamsRepository.deleteTeam(id);
 
-  if (result) return res.json('Team deleted succesfully');
-  else return res.json('An error ocurred');
+  return result ? res.json('Team deleted succesfully') : res.json('An error ocurred');
 });
 
 module.exports = router;
