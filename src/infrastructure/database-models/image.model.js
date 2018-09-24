@@ -2,20 +2,24 @@ const db = require('../database').connection;
 const Sequelize = require('../database').Sequelize;
 const tableNames = require('../table-names');
 
-const Team = db.define(tableNames.teams, {
-  equipo_id: {
+const Album = db.define(tableNames.albums, {
+  id: {
     type: Sequelize.INTEGER(11),
     allowNull: false,
     primaryKey: true
   },
   nombre: {
-    type: Sequelize.STRING(255),
+    type: Sequelize.STRING(45),
     allowNull: false
   },
-  escudo: {
-    type: Sequelize.STRING(255),
-    allowNull: true
+  categoria_id: {
+    type: Sequelize.INTEGER(11),
+    allowNull: false,
+    references: {
+      model: 'imagenes_categorias',
+      key: 'id'
+    }
   }
 });
 
-module.exports = Team;
+module.exports = Album;

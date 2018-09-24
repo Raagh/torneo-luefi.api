@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const config = require('../config/database.config');
 const connection = new Sequelize(config.database, config.user, config.password, {
   host: config.host,
-  dialect: 'mysql',
+  dialect: config.dialect,
   operatorsAliases: false,
   define: {
     timestamps: false

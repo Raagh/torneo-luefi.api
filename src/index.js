@@ -9,5 +9,5 @@ addRoutes(app);
 
 // Starting the server
 app.listen(apiConfig.port, apiConfig.url, () => {
-  console.log(`api running on ${apiConfig.url}:${apiConfig.port}`);
+  console.log(`api running on http://${apiConfig.url}:${apiConfig.port}`);
 });

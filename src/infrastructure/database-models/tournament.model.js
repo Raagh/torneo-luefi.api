@@ -2,20 +2,20 @@ const db = require('../database').connection;
 const Sequelize = require('../database').Sequelize;
 const tableNames = require('../table-names');
 
-const Team = db.define(tableNames.teams, {
-  equipo_id: {
+const Tournament = db.define(tableNames.tournaments, {
+  torneo_id: {
     type: Sequelize.INTEGER(11),
     allowNull: false,
     primaryKey: true
   },
-  nombre: {
+  nombre_torneo: {
     type: Sequelize.STRING(255),
     allowNull: false
   },
-  escudo: {
-    type: Sequelize.STRING(255),
-    allowNull: true
+  zona_id: {
+    type: Sequelize.INTEGER(11),
+    allowNull: false
   }
 });
 
-module.exports = Team;
+module.exports = Tournament;

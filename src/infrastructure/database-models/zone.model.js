@@ -2,9 +2,9 @@ const db = require('../database').connection;
 const Sequelize = require('../database').Sequelize;
 const tableNames = require('../table-names');
 
-const Team = db.define(tableNames.teams, {
-  equipo_id: {
-    type: Sequelize.INTEGER(11),
+const Zone = db.define(tableNames.zones, {
+  id: {
+    type: Sequelize.INTEGER(10).UNSIGNED,
     allowNull: false,
     primaryKey: true
   },
@@ -12,10 +12,10 @@ const Team = db.define(tableNames.teams, {
     type: Sequelize.STRING(255),
     allowNull: false
   },
-  escudo: {
-    type: Sequelize.STRING(255),
-    allowNull: true
+  division_id: {
+    type: Sequelize.INTEGER(10),
+    allowNull: false
   }
 });
 
-module.exports = Team;
+module.exports = Zone;

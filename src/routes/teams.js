@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const teamsRepository = require('../repositories/teams.repository');
 
-
 // GET all Teams
 router.get('/', async (req, res) => {
   const teams = await teamsRepository.getTeams();
