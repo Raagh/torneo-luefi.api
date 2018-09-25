@@ -9,6 +9,6 @@ module.exports = {
     'class-methods-use-this': 0,
     'import/newline-after-import': 0,
     'arrow-body-style': 0,
-    'linebreak-style': ['error', 'windows']
+    'linebreak-style': 0
   }
 };
