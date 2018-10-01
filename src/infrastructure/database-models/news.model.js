@@ -2,7 +2,7 @@ const db = require('../database').connection;
 const Sequelize = require('../database').Sequelize;
 const tableNames = require('../table-names');
 
-const New = db.define(tableNames.news, {
+const Article = db.define(tableNames.news, {
   id: {
     type: Sequelize.INTEGER(10).UNSIGNED,
     allowNull: false,
@@ -22,4 +22,4 @@ const New = db.define(tableNames.news, {
   }
 });
 
-module.exports = New;
+module.exports = Article;
