@@ -1,6 +1,9 @@
-export class Team {
-    // In this model we should have the things we want to expose, probably not everything that is saved in the database.
-    // the database should use this objects to avoid coupling.
+class Team {
+  constructor(id, crest, name) {
+    this.Id = id;
+    this.Name = name;
+    this.Crest = crest;
+  }
 }
 
 module.exports = Team;

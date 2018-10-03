@@ -14,16 +14,17 @@ const deleteNewsArticle = async articleId => await Article.destroy({
   }
 });
 
-const updateNewsArticle = async (articleId, article) => await Article.update(
-  {
-    titulo: article.titulo,
-    subtitulo: article.subtitulo,
-    mensaje: article.mensaje
-  },
-  { where: { id: articleId } }
-);
+const updateNewsArticle = async (articleId, article) => await Article.update({
+  titulo: article.titulo,
+  subtitulo: article.subtitulo,
+  mensaje: article.mensaje
+}, {
+  where: {
+    id: articleId
+  }
+});
 
-const createNewArticle = async article => await Article.create({
+const createNewsArticle = async article => await Article.create({
   titulo: article.titulo,
   subtitulo: article.subtitulo,
   mensaje: article.mensaje
@@ -34,5 +35,5 @@ module.exports = {
   getNewsArticle,
   deleteNewsArticle,
   updateNewsArticle,
-  createNewArticle
+  createNewsArticle
 };
