@@ -5,6 +5,7 @@ const tableNames = require('../table-names');
 const Team = db.define(tableNames.teams, {
   equipo_id: {
     type: Sequelize.INTEGER(11),
+    autoIncrement: true,
     allowNull: false,
     primaryKey: true
   },

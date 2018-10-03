@@ -5,6 +5,7 @@ const tableNames = require('../table-names');
 const Article = db.define(tableNames.news, {
   id: {
     type: Sequelize.INTEGER(10).UNSIGNED,
+    autoIncrement: true,
     allowNull: false,
     primaryKey: true
   },

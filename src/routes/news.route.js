@@ -8,19 +8,36 @@ router.get('/', async (req, res) => {
   return res.json(teams);
 });
 
-// GET News
+// GET New
 router.get('/:id', async (req, res) => {
   const id = req.params.id;
   const team = await newsRepository.getNewsArticle(id);
   return res.json(team);
 });
 
-// Delete News
+// Delete New
 router.delete('/:id', async (req, res) => {
   const id = req.params.id;
   const result = await newsRepository.deleteNewsArticle(id);
 
-  return result ? res.json('Article deleted succesfully') : res.json('An error ocurred');
+  return result
+    ? res.status(200).json('Article deleted succesfully')
+    : res.status(500).json('An error ocurred');
+});
+
+// Update New
+router.put('/:id', async (req, res) => {
+  const id = req.params.id;
+  const result = await newsRepository.updateNewsArticle(id, req.body);
+
+  return result ? res.status(200).json(result) : res.status(500).json('An error ocurred');
+});
+
+// Create New
+router.post('/', async (req, res) => {
+  const result = await newsRepository.createNewArticle(req.body);
+
+  return result ? res.status(200).json(result) : res.status(500).json('An error ocurred');
 });
 
 module.exports = router;

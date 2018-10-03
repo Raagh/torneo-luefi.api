@@ -4,7 +4,7 @@ change database/ORM to mongodb/mongoose only one class needs to be updated. */
 
 const Article = require('../infrastructure/database-models/news.model');
 
-const getAllNewsArticles = async () => await Article.all();
+const getAllNewsArticles = async () => await Article.findAll();
 
 const getNewsArticle = async articleId => await Article.findById(articleId);
 
@@ -14,8 +14,25 @@ const deleteNewsArticle = async articleId => await Article.destroy({
   }
 });
 
+const updateNewsArticle = async (articleId, article) => await Article.update(
+  {
+    titulo: article.titulo,
+    subtitulo: article.subtitulo,
+    mensaje: article.mensaje
+  },
+  { where: { id: articleId } }
+);
+
+const createNewArticle = async article => await Article.create({
+  titulo: article.titulo,
+  subtitulo: article.subtitulo,
+  mensaje: article.mensaje
+});
+
 module.exports = {
   getAllNewsArticles,
   getNewsArticle,
-  deleteNewsArticle
+  deleteNewsArticle,
+  updateNewsArticle,
+  createNewArticle
 };
