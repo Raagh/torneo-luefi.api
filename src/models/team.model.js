@@ -1,8 +1,8 @@
 class Team {
   constructor(id, crest, name) {
-    this.Id = id;
-    this.Name = name;
-    this.Crest = crest;
+    this.id = id;
+    this.name = name;
+    this.crest = crest;
   }
 }
 
