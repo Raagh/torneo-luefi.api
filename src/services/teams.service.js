@@ -1,4 +1,4 @@
-const teamsRepository = require('../repositories/teams.repository');
+const teamsRepository = require('../infrastructure/repositories/teams.repository');
 const Team = require('../models/team.model');
 
 const getTeams = async () => {
@@ -19,5 +19,5 @@ module.exports = {
   getTeam,
   deleteTeam,
   updateTeam,
-  createTeam
+  createTeam,
 };

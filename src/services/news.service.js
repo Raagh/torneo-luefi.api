@@ -1,4 +1,4 @@
-const newsRepository = require('../repositories/news.repository');
+const newsRepository = require('../infrastructure/repositories/news.repository');
 const NewsArticle = require('../models/news-article.model');
 
 const getAllNewsArticles = async () => {
@@ -10,7 +10,8 @@ const getNewsArticle = async newsId => await newsRepository.getNewsArticle(newsI
 
 const deleteNewsArticle = async newsId => await newsRepository.deleteNewsArticle(newsId);
 
-const updateNewsArticle = async (newsId, newsArticle) => await newsRepository.updateNewsArticle(newsId, newsArticle);
+const updateNewsArticle = async (newsId, newsArticle) =>
+  await newsRepository.updateNewsArticle(newsId, newsArticle);
 
 const createNewsArticle = async newsArticle => await newsRepository.createNewsArticle(newsArticle);
 
@@ -19,5 +20,5 @@ module.exports = {
   getNewsArticle,
   deleteNewsArticle,
   updateNewsArticle,
-  createNewsArticle
+  createNewsArticle,
 };
